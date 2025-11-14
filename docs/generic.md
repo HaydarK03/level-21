@@ -50,11 +50,7 @@ wget https://git.ryujinx.app/api/v4/projects/68/packages/generic/Ryubing-Canary/
 flatpak remote-add --if-not-exists dolphin https://flatpak.dolphin-emu.org/releases.flatpakrepo
 ```
 ```
-flatpak install dolphin org.DolphinEmu.dolphin-emu 
-```
-## playstation2
-```
-flatpak install flathub net.pcsx2.PCSX2 
+pacman -S dolphin-emu
 ```
 ## playstation1
 ```
@@ -91,7 +87,32 @@ wget https://psbios.me/download/ps1/SCPH5500.BIN
 ```
 wget https://psbios.me/download/ps1/SCPH-7502.BIN
 ```
-
+## playstation2
+```
+mkdir -p /opt/Pcsx2
+```
+```
+cd /opt/Pcsx2 
+```
+```
+wget https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
+```
+```
+chmod +x pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage 
+```
+## playstation2
+```
+mkdir -p /opt/Rpcs3
+```
+```
+cd /opt/Rpcs3 
+```
+```
+wget https://github.com/RPCS3/rpcs3-binaries-linux/releases/download/build-e48ba283d82ec66072596b13f4d8522d0cf4961f/rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage
+```
+```
+chmod +x rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage
+```
 ## android
 ```
 pacman -S waydroid
