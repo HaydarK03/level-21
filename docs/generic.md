@@ -70,9 +70,6 @@ locale-gen
 
 ## preps
 ```
-rm /usr/share/wayland-sessions/*
-```
-```
 rm -fr /etc/skel/.bash*
 ```
 ```
@@ -257,6 +254,12 @@ mkdir -p /boot/efi/{boot,linux,systemd,rescue}
 ```
 mv /boot/vmlinuz-linux-zen /boot/amd-ucode.img /boot/kernel/
 ```
+```
+rm /etc/mkinitcpio.conf
+```
+```
+```
+rm -fr /etc/mkinitcpio.conf.d/
 ```
 rm /boot/initramfs-*
 ```
