@@ -9,6 +9,31 @@ genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
+## beta
+enable multilib
+```
+pacman -Syy
+```
+```
+pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse  ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher btop gdm networkmanager 
+```
+
+## config
+```
+git clone https://github.com/blackbird-package/level-21 /tmp
+```
+```
+cp -fr /tmp/level-21/* /
+```
+*radeon*
+```
+cp -fr /tmp/radeon/* /
+```
+*nvidia*
+```
+cp -fr /tmp/nvidia/* /
+```
+
 
 ### hostname 
 ```
@@ -39,34 +64,6 @@ systemctl enable systemd-timesyncd.service
 locale-gen
 ```
 
-## alpha
-```
-pacman -S linux-zen amd-ucode mkinitcpio cutefish-calculator cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-screenshot cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher sddm
-```
-
-## beta
-```
-pacman -Syy
-```
-
-```
-pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse  ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher btop gdm networkmanager 
-```
-## config
-```
-git clone https://github.com/blackbird-package/level-21 /tmp
-```
-```
-cp -fr /tmp/level-21/* /
-```
-*radeon*
-```
-cp -fr /tmp/radeon/* /
-```
-*nvidia*
-```
-cp -fr /tmp/nvidia/* /
-```
 
 ## preps
 ```
