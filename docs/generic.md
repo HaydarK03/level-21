@@ -20,7 +20,7 @@ pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireles
 
 ## config
 ```
-git clone https://github.com/blackbird-package/level-21 /tmp
+git clone https://github.com/blackbird-package/level-21.git /tmp/
 ```
 ```
 cp -fr /tmp/level-21/* /
