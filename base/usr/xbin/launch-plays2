@@ -1,2 +1,2 @@
 #!/bin/bash
-gamescope -W 1920 -H 1080 -r 60 -- /opt/Pcsx2/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
+gamescope -W 1920 -H 1080 -r 60 -- /var/games/playstation2/engine/lates.AppImage

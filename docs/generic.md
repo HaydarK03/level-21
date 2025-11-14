@@ -1,6 +1,6 @@
 ## before chroot
 ```
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel neovim
 ```
 ```
 genfstab -U /mnt > /mnt/etc/fstab
@@ -16,15 +16,61 @@ pacman -S linux-zen amd-ucode mkinitcpio cutefish-calculator cutefish-core cutef
 
 ## beta
 ```
-pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse  ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher btop gdm 
+pacman -Syy
 ```
 
-## clean
 ```
-rm /usr/share/wayland-sessions/gnome.desktop
+pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse  ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher btop gdm networkmanager 
+```
+## config
+```
+git clone https://github.com/blackbird-package/level-21 /tmp
 ```
 ```
-rm /usr/share/wayland-sessions/gnome-wayland.desktop
+cp -fr /tmp/level-21/* /
+```
+*radeon*
+```
+cp -fr /tmp/radeon/* /
+```
+*nvidia*
+```
+cp -fr /tmp/nvidia/* /
+```
+
+## preps
+```
+rm /usr/share/wayland-sessions/*
+```
+```
+rm -fr /etc/skel/.bash*
+```
+```
+mkdir /var/games/{playstation1,playstation2,nintendo-swicth,nintendo-wii,playstation3,steam,epic,ubisoft}
+```
+```
+mkdir /var/games/playstation1/{firmware,keyprod,library}
+```
+```
+mkdir /var/games/playstation2/{firmware,keyprod,library}
+```
+```
+mkdir /var/games/playstation3/{firmware,keyprod,library}
+```
+```
+mkdir /var/games/nintendo-wii/{firmware,keyprod,library}
+```
+```
+mkdir /var/games/nintendo-switch/{firmware,keyprod,library}
+```
+```
+mkdir epic/{engine,prefix,library}
+```
+```
+mkdir steam/{engine,prefix,library}
+```
+```
+mkdir ubisoft/{engine,prefix,library}
 ```
 ## steam
 ```
@@ -64,6 +110,25 @@ pacman -U Heroic-2.18.1-linux-x64.pacman
 ```
 wget https://git.ryujinx.app/api/v4/projects/68/packages/generic/Ryubing-Canary/1.3.207/ryujinx-canary-1.3.207-linux_x64.tar.gz
 ```
+```
+tar xf ryujinx-canary-1.3.207-linux_x64.tar.gz
+```
+```
+rm ryujinx-canary-1.3.207-linux_x64.tar.gz
+```
+```
+cd /var/games/nintend-switch/firmware
+```
+```
+wget https://github.com/THZoria/NX_Firmware/releases/download/20.5.0/Firmware.20.5.0.zip
+```
+```
+cd /var/games/nintend-switch/keyprod
+```
+```
+wget https://files.prodkeys.net/ProdKeys.NET-v20.5.0.zip
+```
+
 ## nintendo wii/gamecube
 ```
 pacman -S dolphin-emu
@@ -73,26 +138,20 @@ pacman -S dolphin-emu
 cd /opt 
 ```
 ```
-mkdir Duckers
+mkdir playstation1
 ```
 ```
-cd Duckers
+cd playstation1
 ```
 [check latest release](https://github.com/stenzek/duckstation/releases/tag/latest) 
 ```
- wget https://github.com/stenzek/duckstation/releases/download/latest/DuckStation-x64-SSE2.AppImage
+wget https://github.com/stenzek/duckstation/releases/download/latest/DuckStation-x64.AppImage
 ```
 ```
 chmod +x DuckStation-x64.AppImage 
 ```
 ```
-su [nama user]
-```
-```
-mkdir -p $HOME/.local/bios/playstation1
-```
-```
-cd $HOME/.local/bios/playstation1
+cd /var/games/playstation1/firmware
 ```
 ```
 wget https://psbios.me/download/ps1/SCPH1001.BIN
@@ -103,12 +162,10 @@ wget https://psbios.me/download/ps1/SCPH5500.BIN
 ```
 wget https://psbios.me/download/ps1/SCPH-7502.BIN
 ```
+
 ## playstation2
 ```
-mkdir -p /opt/Pcsx2
-```
-```
-cd /opt/Pcsx2 
+cd /var/games/playstation2/engine
 ```
 ```
 wget https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
@@ -116,12 +173,26 @@ wget https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-
 ```
 chmod +x pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage 
 ```
-## playstation2
 ```
-mkdir -p /opt/Rpcs3
+mv pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage latest.AppImage
 ```
 ```
-cd /opt/Rpcs3 
+cd /var/games/playstation2/firmware
+```
+```
+wget https://pcsx2bios.com/wp-content/uploads/download/ps2/ps2-bios-all-bios.zip
+```
+```
+unzip ps2-bios-all-bios.zip 
+```
+```
+rm ps2-bios-all-bios.zip
+```
+
+
+## playstation3
+```
+cd /var/games/playstation3/engine
 ```
 ```
 wget https://github.com/RPCS3/rpcs3-binaries-linux/releases/download/build-e48ba283d82ec66072596b13f4d8522d0cf4961f/rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage
@@ -129,6 +200,10 @@ wget https://github.com/RPCS3/rpcs3-binaries-linux/releases/download/build-e48ba
 ```
 chmod +x rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage
 ```
+```
+mv rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage latest.AppImage
+```
+
 ## android
 ```
 pacman -S waydroid
@@ -150,18 +225,49 @@ rm /usr/share/wayland-sessions/kodi-gbm.desktop
 rm /usr/share/xsessions/kodi.desktop
 ```
 
-## configuration
+## booting
 ```
-git clone https://github.com/blackbird-package/level-21 /tmp
+echo "root=/dev/nvme0n1p5" > /etc/cmdline.d/01-boot.conf
 ```
 ```
-cp -fr /tmp/level-21/* /
+mkdir -p /boot/{efi,kernel,loader}
 ```
-*radeon*
 ```
-cp -fr /tmp/radeon/* /
+mkdir -p /boot/efi/{boot,linux,systemd,rescue}
 ```
-*nvidia*
 ```
-cp -fr /tmp/nvidia/* /
+mv /boot/vmlinuz-linux-zen /boot/amd-ucode.img /boot/kernel/
+```
+```
+rm /boot/initramfs-*
+```
+## secured
+
+```
+ukify genkey --config /etc/kernel/uki.conf
+```
+```
+bootctl --path=/boot/ install --secure-boot-auto-enroll yes --certificate /etc/kernel/blackhawke-certificate.pem --private-key /etc/kernel/blackhawkes-private-key.pem
+```
+
+## service
+```
+systemctl enable NetworkManager
+```
+```
+systemctl enable seatd
+```
+```
+systemctl enable gdm
+```
+```
+systemctl enable firewalld
+```
+
+## finishing
+```
+chmod +x /usr/xbin/*
+```
+```
+mkinitcpio -P
 ```

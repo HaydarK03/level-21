@@ -1,2 +1,2 @@
 #!/bin/bash
-gamescope -W 1920 -H 1080 -r 60 -- /opt/Rpcs3/rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage
+gamescope -W 1920 -H 1080 -r 60 -- /var/games/playstation3/engine/lates.AppImage
