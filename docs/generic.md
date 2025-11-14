@@ -278,15 +278,6 @@ bootctl --path=/boot/ install
 ```
 pacman -S aria2
 ```
-```
-mkdir /opt/motrix
-```
-```
-cd /opt/motrix
-```
-```
-wget https://dl.moapp.me/https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-1.8.19.AppImage
-```
 
 
 ## service
