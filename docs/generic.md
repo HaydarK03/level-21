@@ -135,6 +135,8 @@ wget https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/downl
 ```
 pacman -U Heroic-2.18.1-linux-x64.pacman
 ```
+
+
 ## nintendo switch
 [check latest ryujinx](https://git.ryujinx.app/ryubing/canary/-/releases)
 ```
@@ -163,6 +165,8 @@ wget https://files.prodkeys.net/ProdKeys.NET-v20.5.0.zip
 ```
 pacman -S dolphin-emu
 ```
+
+
 ## playstation1
 ```
 cd /opt 
@@ -271,21 +275,16 @@ mv /boot/vmlinuz-linux-zen /boot/amd-ucode.img /boot/kernel/
 ```
 rm /boot/initramfs-*
 ```
+
 ## secured
 
 ```
-ukify genkey --config /etc/kernel/uki.conf
-```
-```
-bootctl --path=/boot/ install --secure-boot-auto-enroll yes --certificate /etc/kernel/blackhawke-certificate.pem --private-key /etc/kernel/blackhawkes-private-key.pem
+bootctl --path=/boot/ install
 ```
 
 ## service
 ```
 systemctl enable NetworkManager
-```
-```
-systemctl enable seatd
 ```
 ```
 systemctl enable gdm
