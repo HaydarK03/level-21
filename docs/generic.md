@@ -23,7 +23,7 @@ pacman -S linux-zen amd-ucode mkinitcpio openssh firewalld systemd-ukify wireles
 git clone https://github.com/blackbird-package/level-21.git /tmp/
 ```
 ```
-cp -fr /tmp/level-21/* /
+cp -fr /tmp/level-21/base/* /
 ```
 *radeon*
 ```
@@ -101,7 +101,7 @@ mkdir ubisoft/{engine,prefix,library}
 ```
 ## steam
 ```
-pacman -S steam
+pacman -S steam --noconfirm
 ```
 ## user
 ```
@@ -233,7 +233,7 @@ mv rpcs3-v0.0.38-18328-e48ba283_linux64.AppImage latest.AppImage
 
 ## android
 ```
-pacman -S waydroid
+pacman -S waydroid --noconfirm
 ```
 ```
 waydroid init -s GAPPS
