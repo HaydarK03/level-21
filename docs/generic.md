@@ -47,9 +47,6 @@ wget https://git.ryujinx.app/api/v4/projects/68/packages/generic/Ryubing-Canary/
 ```
 ## nintendo wii/gamecube
 ```
-flatpak remote-add --if-not-exists dolphin https://flatpak.dolphin-emu.org/releases.flatpakrepo
-```
-```
 pacman -S dolphin-emu
 ```
 ## playstation1
