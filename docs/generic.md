@@ -11,7 +11,7 @@ arch-chroot /mnt
 
 ## alpha
 ```
-pacman -S linux-zen amd-ucode mkinitcpio cutefish-calculator cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-screenshot cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher gdm
+pacman -S linux-zen amd-ucode mkinitcpio cutefish-calculator cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-screenshot cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers openssh firewalld systemd-ukify wireless-regdb sof-firmware lib32-mesa mesa  vulkan-radeon lib32-vulkan-radeon linux-firmware-atheros linux-firmware-intel linux-firmware-realtek linux-firmware-amdgpu linux-firmware-radeon gamescope gamemode pipewire pipewire-pulse ttf-roboto kitty-terminfo git wget pipewire-jack flatpak cosmic-store flatpak-kcm fuse weston umu-launcher sddm
 ```
 
 ## beta
@@ -77,7 +77,19 @@ chmod +x DuckStation-x64.AppImage
 su [nama user]
 ```
 ```
-mkdir $HOME
+mkdir -p $HOME/.local/bios/playstation1
+```
+```
+cd $HOME/.local/bios/playstation1
+```
+```
+wget https://psbios.me/download/ps1/SCPH1001.BIN
+```
+```
+wget https://psbios.me/download/ps1/SCPH5500.BIN
+```
+```
+wget https://psbios.me/download/ps1/SCPH-7502.BIN
 ```
 
 ## android
