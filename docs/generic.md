@@ -258,7 +258,6 @@ mv /boot/vmlinuz-linux-zen /boot/amd-ucode.img /boot/kernel/
 rm /etc/mkinitcpio.conf
 ```
 ```
-```
 rm -fr /etc/mkinitcpio.conf.d/
 ```
 rm /boot/initramfs-*
@@ -266,6 +265,21 @@ rm /boot/initramfs-*
 ```
 bootctl --path=/boot/ install
 ```
+
+## motrix
+```
+pacman -S aria2
+```
+```
+mkdir /opt/motrix
+```
+```
+cd /opt/motrix
+```
+```
+wget https://dl.moapp.me/https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-1.8.19.AppImage
+```
+
 
 ## service
 ```
