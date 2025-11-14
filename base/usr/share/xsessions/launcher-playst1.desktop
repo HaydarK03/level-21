@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/xbin/launch-plays1
+TryExec=/usr/xbin/launch-plays1
+Name=Ubisoft Connect
+Keywords=session
+Comment=session
